@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Canjeos</title>
+
+<!-- Bootstrap core CSS -->
+<link th:href="@{vendor/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link th:href="@{css/heroic-features.css}" rel="stylesheet">
+</head>
+<body>
+<div align="center">
+    
+    <br/><br/>
+    <!-- Navigation -->
+	<div th:include="administrador/template_admin.html::header"></div>
+
+	<!-- Page Content -->
+	<div class="container">
+
+		<!-- Jumbotron Header -->
+		<header class="jumbotron my-4">
+			<h1 class="display-3">Bienvenido a Spring Ecommerce 2021</h1>
+			<p class="lead">Tu tienda de productos en Línea</p>
+		</header>
+	<div align="center">
+		
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Premio</th>
+                <th>Usuario</th>
+                <th>Porcentaje</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="can : ${listacanjeos}">
+            	<td th:text="${can.premio.nombre}">ID</td>
+                <td th:text="${can.usuario.nombre}">Nombre</td>
+                <td th:text="${can.num_canjees}">Canjeos</td>
+                
+            </tr>
+            <a href="/">Pagina de administracion</a>
+            <br></br>
+        </tbody>
+    </table>
+</div>    
+</body>
+	<div th:include="administrador/template_admin.html::footer"></div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</html>

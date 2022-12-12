@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Editar ejemplar</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Editar ejemplar</h1>
+		<br />
+		<form action="#" th:action="@{/save}" th:object="${p}"
+			method="post">
+
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>id:</td>
+					<td><input type="text"  th:field="*{id}" readonly="readonly"/></td>
+					</tr>
+							
+				<tr>				
+					<td>Tipo:</td>
+					<td>
+						<input type="text" th:field="*{tipo}" />
+					</td>
+				</tr>
+				
+					<td>Cantidad de puntos:</td>
+					<td><input type="date" th:field="*{cantidad de puntos}" /></td>
+				</tr>
+				<tr>
+				
+				
+				
+				<tr>
+					<td colspan="2"><button type="submit" onclick="confirmar()">Save</button> </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+<script>
+function confirmar()
+{
+	if(confirm("Estas seguro que quieres editarlo?"))
+	{
+		return true;
+	}
+	return false;
+}
+</script>
+</html>
